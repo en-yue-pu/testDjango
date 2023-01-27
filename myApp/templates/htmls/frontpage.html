@@ -1,8 +1,16 @@
-<!-- 此文件作为base.HTML的拓展 -->
+<!-- 此文件作为base.HTML的子类 -->
 {% extends "htmls/base.html" %} 
-<!-- 代码块 -->
+<!-- 和父级classbase不同的部分 -->
 {% block content %} 
+
+<!-- 从post取出所有数据放进参数post 在这个文件中使用 -->
+{% for post in posts %}
 <div class="post block">
-    <h2>This is frontpage.html </h2>
+    <h2 class="subtitle">{{post.title}}</h2>
+    <small>发布时间: {{post.data_added}}</small>
+    <p>{{post.intro}}</p>
+    <hr />
 </div>
+{% endfor %}
+
 {% endblock %}

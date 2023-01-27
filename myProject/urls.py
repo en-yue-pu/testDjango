@@ -1,4 +1,4 @@
-from django.contrib import admin
+from django.contrib import admin #系统自带 管理画面
 from django.urls import path
 from myApp.views import frontpage #像导入包一样导入自己写的函数
 

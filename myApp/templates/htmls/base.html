@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog base 画面</title>
+    <!-- 这个是在线的css格式直接导入使用: -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+</head>
+
+<body>
+    <nav class="navbar is-danger">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item"><strong>this is base.html </strong></a>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">{% block content %} {% endblock %}</div>
+        <!-- 调用frontpage.html把代码块放进来  -->
+    </section>
+</body>
+
+</html>

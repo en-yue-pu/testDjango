@@ -3,7 +3,23 @@
 
 <h1 class="title">{{post.title}}</h1>
 <small>Posted at {{post.data_added}}</small>
-<p>{{post.intro}}</p>
+<p><strong>{{post.intro}}</strong></p>
+<p>{{post.body}}</p>
+
+<!-- 详细页面的评论栏 -->
+<h2 class="subtitle">コメントを追加</h2>
+
+<form action="." method="post">
+  <!-- 这行是系统安全的原因必须追加 -->
+  {% csrf_token%}
+  {{form.as_p}}
+  <!-- as_table   as_ul   根据什么来form -->
+  <div class="field">
+    <div class="control">
+      <button class="button is-danger">送信</button>
+    </div>
+  </div>
+</form>
 
 
 {% endblock %}

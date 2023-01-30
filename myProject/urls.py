@@ -1,12 +1,12 @@
 from django.contrib import admin  # 系统自带 管理画面
 from django.urls import path
-from myApp.views import frontpage  # 像导入包一样导入自己写的函数
+from myApp.views import frontpage, post_detail  # 像导入包一样导入自己写的函数
 
 urlpatterns = [
     # domin后面的所有所有网址 空字符串就是domin 根目录
     path('admin/', admin.site.urls),
     path("", frontpage),  # 根目录 调用view.py 的frontpage函数 #clent call server 1
-    # path("<slug:slug>/", post_detail, name="post_detail")
+    path("<slug:slug>/", post_detail, name="post_detail")
     # <slug:slug> 这种写法会默认为每个详细页面单独设定最终的url 比如 post-1 post-2
 ]
 

@@ -1,9 +1,10 @@
-<!-- 此文件作为base.HTML的子类 -->
+<!-- 此文件作为base.HTML的子类   派生 -->
 {% extends "htmls/base.html" %} 
 <!-- 和父级classbase不同的部分 -->
 {% block content %} 
+<!-- 这里带入了base.html的所有代码 加上这个block的内容 嵌入-->
 
-<!-- 从post取出所有数据放进参数post 在这个文件中使用 -->
+<!-- 从posts取出所有数据放进参数post 在这个文件中使用 -->
 {% for post in posts %}
 <div class="post block">
     <h2 class="subtitle">{{post.title}}</h2>

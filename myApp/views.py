@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import Post
-from .forms import CommentForm
 # view函数  这个页面一杯打开时候调用的函数 request是客户断访问请求 的实例 
 
 def frontpage(request): #clent call server 2

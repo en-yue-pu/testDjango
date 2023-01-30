@@ -24,7 +24,7 @@ def post_detail(request, slug):  # slug格式是自己在 管理画面 填写的
             comment.post = post
             comment.save()
 
-            return redirect("post_detail", slug=post.slug)  # 成功后重新跳转到详细页面
+            return redirect("post_detail", slug=post.slug)  # 成功后重新跳转到详细页面 相当于刷新页面
 
     else:  # 不是 POST格式
         form = CommentForm()

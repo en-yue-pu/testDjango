@@ -6,7 +6,34 @@
 <p><strong>{{post.intro}}</strong></p>
 <p>{{post.body}}</p>
 
-<!-- 详细页面的评论栏 -->
+<hr/>
+
+
+<!-- 显示已经投稿的所有评论-->
+<h2 class="subtitle">コメント</h2>
+
+{% for comment in post.comments.all%}
+<article class="media">
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>{{comment.name}}</strong> <small>{{comment.data_added}}</small>
+        <br />
+        {{comment.body}}
+      </p>
+    </div>
+  </div>
+</article>
+<!-- comment为0个的时候 -->
+{% empty %}
+<div class="notification">
+  <p>まだコメントがありません。</p>
+</div>
+{% endfor %}
+
+<hr/>
+
+<!-- 详细页面的评论栏发送评论部分 -->
 <h2 class="subtitle">コメントを追加</h2>
 
 <form action="." method="post">
@@ -16,7 +43,7 @@
   <!-- as_table   as_ul   根据什么来form -->
   <div class="field">
     <div class="control">
-      <button class="button is-danger">送信</button>
+      <button class="111">送信</button>
     </div>
   </div>
 </form>

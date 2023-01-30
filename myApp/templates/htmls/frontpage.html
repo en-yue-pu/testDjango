@@ -11,6 +11,8 @@
     <small>发布时间: {{post.data_added}}</small>
     <p>{{post.intro}}</p>
     <p>{{post.body}}</p>
+    <a href="{% url 'post_detail' post.slug %}">もっと読む</a>
+    <!-- post_detail 是 url.py 定义的detail页面名称 -->
     <hr />
 </div>
 {% endfor %}
